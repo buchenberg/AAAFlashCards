@@ -7,6 +7,14 @@
       "url": "http://localhost:5500",
       "webRoot": "${workspaceFolder}",
       "file": "${workspaceFolder}/index.html"
+    },
+    {
+      "name": "Launch with http-server",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:8080",
+      "webRoot": "${workspaceFolder}",
+      "preLaunchTask": "start-http-server"
     }
   ]
 }
