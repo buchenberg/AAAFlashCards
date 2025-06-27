@@ -1,0 +1,102 @@
+[
+    {
+        "category": "Identity",
+        "question": "What are the three main types of Azure AD identities?",
+        "answer": "1. Users (cloud identities, directory-synchronized identities, guest users)\n2. Groups (security groups, Microsoft 365 groups)\n3. Applications (service principals and managed identities)"
+    },
+    {
+        "category": "Identity",
+        "question": "What is the difference between Azure AD roles and Azure RBAC roles?",
+        "answer": "Azure AD roles manage Azure AD resources (users, groups, domains) while Azure RBAC roles manage Azure resources (VMs, storage, networks). AD roles are assigned at tenant level, RBAC roles at subscription/resource group/resource level."
+    },
+    {
+        "category": "Identity",
+        "question": "What are the four built-in Azure RBAC roles?",
+        "answer": "1. Owner - Full access including access management\n2. Contributor - Full access except access management\n3. Reader - View all resources but cannot make changes\n4. User Access Administrator - Manage user access to Azure resources"
+    },
+    {
+        "category": "Storage",
+        "question": "What are the four Azure Storage account performance tiers?",
+        "answer": "1. Standard - Uses HDDs, lower cost, good for backup/archival\n2. Premium - Uses SSDs, higher performance\n  - Premium Block Blobs\n  - Premium File Shares\n  - Premium Page Blobs"
+    },
+    {
+        "category": "Storage",
+        "question": "What are the Azure Blob storage access tiers and their use cases?",
+        "answer": "1. Hot - Frequently accessed data, highest storage cost, lowest access cost\n2. Cool - Infrequently accessed, stored for 30+ days, lower storage cost\n3. Archive - Rarely accessed, stored for 180+ days, lowest storage cost, highest access cost, hours to retrieve"
+    },
+    {
+        "category": "Storage",
+        "question": "What is the difference between Standard and Premium managed disks?",
+        "answer": "Standard: HDD-backed, lower cost, good for dev/test workloads\nPremium: SSD-backed, high performance, low latency, for production workloads\nUltra: Highest performance, configurable IOPS and throughput, for intensive workloads"
+    },
+    {
+        "category": "Compute",
+        "question": "What are Azure VM availability options and their SLA guarantees?",
+        "answer": "1. Single VM with Premium SSD - 99.9% SLA\n2. Availability Set - 99.95% SLA (protects against hardware failures)\n3. Availability Zone - 99.99% SLA (protects against datacenter failures)\n4. Region Pairs - Disaster recovery across regions"
+    },
+    {
+        "category": "Compute",
+        "question": "What is the difference between Azure VM Scale Sets Uniform and Flexible orchestration?",
+        "answer": "Uniform: Identical VMs, up to 1000 instances, automatic scaling, legacy model\nFlexible: Mixed VM sizes/types, up to 1000 instances, manual or automatic scaling, better fault isolation, recommended for new deployments"
+    },
+    {
+        "category": "Compute",
+        "question": "What are the main Azure Container services?",
+        "answer": "1. Azure Container Instances (ACI) - Serverless containers, pay-per-second\n2. Azure Kubernetes Service (AKS) - Managed Kubernetes\n3. Azure Container Apps - Serverless microservices platform\n4. Azure Container Registry (ACR) - Private Docker registry"
+    },
+    {
+        "category": "Networking",
+        "question": "What are the default Azure VNet address spaces and subnet requirements?",
+        "answer": "VNet: Can use any private IP range (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16)\nSubnets: Must be within VNet range, cannot overlap\nAzure reserves 5 IPs per subnet: .0 (network), .1 (gateway), .2-.3 (DNS), .255 (broadcast)"
+    },
+    {
+        "category": "Networking",
+        "question": "What are the differences between Basic and Standard Azure Load Balancer?",
+        "answer": "Basic: Free, up to 300 endpoints, availability set backend only, no SLA\nStandard: Paid, up to 1000 endpoints, VNet backend, 99.99% SLA, zone redundant, supports outbound rules, health probes, multiple frontends"
+    },
+    {
+        "category": "Networking",
+        "question": "What are the Azure VPN Gateway types and their differences?",
+        "answer": "Route-based (preferred): Dynamic routing, supports multi-site, point-to-site, ExpressRoute coexistence\nPolicy-based: Static routing, single site-to-site tunnel only, legacy scenarios\nVPN types: Site-to-Site, Point-to-Site, VNet-to-VNet"
+    },
+    {
+        "category": "Networking",
+        "question": "What is Azure Private Link vs Service Endpoints?",
+        "answer": "Service Endpoints: Extends VNet to Azure services via Azure backbone, service-level access, no additional cost\nPrivate Link: Creates private endpoint in VNet with private IP, resource-level access, cross-region support, additional cost"
+    },
+    {
+        "category": "Monitor",
+        "question": "What are the main Azure Monitor data types and their retention?",
+        "answer": "Metrics: Numerical data, 93 days retention, near real-time\nLogs: Text data in Log Analytics workspace, configurable retention (30-730 days)\nTraces: Distributed tracing data\nActivity Logs: Subscription-level events, 90 days retention"
+    },
+    {
+        "category": "Monitor",
+        "question": "What is the difference between Azure Monitor Alerts rule types?",
+        "answer": "Metric Alerts: Based on metric values, near real-time, stateful\nLog Alerts: Based on log queries, less frequent evaluation, stateless\nActivity Log Alerts: Based on activity log events\nSmart Detection: AI-based anomaly detection for Application Insights"
+    },
+    {
+        "category": "Identity",
+        "question": "What are the Azure AD Password Protection components?",
+        "answer": "Global banned password list: Microsoft-maintained list of weak passwords\nCustom banned password list: Organization-specific banned passwords\nOn-premises component: DC agent and proxy service for hybrid environments\nFuzzy matching: Detects variations of banned passwords"
+    },
+    {
+        "category": "Storage",
+        "question": "What are the Azure Files authentication options?",
+        "answer": "1. Storage account key - Full access, not recommended for production\n2. Shared Access Signature (SAS) - Limited access with expiration\n3. Azure AD authentication - Identity-based access for SMB\n4. On-premises AD DS - Hybrid identity integration"
+    },
+    {
+        "category": "Compute",
+        "question": "What are the Azure VM extension types and their purposes?",
+        "answer": "Custom Script Extension: Run scripts during/after VM provisioning\nDSC Extension: PowerShell Desired State Configuration\nDiagnostics Extension: Collect performance and diagnostic data\nAntimalware Extension: Microsoft Antimalware protection\nChef/Puppet Extensions: Configuration management"
+    },
+    {
+        "category": "Networking",
+        "question": "What are Azure Firewall features and rule types?",
+        "answer": "Features: FQDN filtering, network/application rules, threat intelligence, DNS proxy\nRule Types:\n- Network rules: Layer 3/4 filtering (IP, port, protocol)\n- Application rules: Layer 7 filtering (FQDN, HTTP/HTTPS)\n- NAT rules: Destination NAT for inbound traffic"
+    },
+    {
+        "category": "Monitor",
+        "question": "What are Azure Log Analytics workspace pricing tiers?",
+        "answer": "Pay-as-you-go: $2.30/GB ingested (first 5GB free daily)\nCommitment tiers: 100GB-5TB daily, 15-50% discount\nLegacy tiers: Free (500MB daily), Standalone, Per Node\nData retention: First 31 days free, then $0.10/GB/month"
+    }
+]
